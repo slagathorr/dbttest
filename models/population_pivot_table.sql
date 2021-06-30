@@ -1,0 +1,1 @@
+{{ dbt_utils.unpivot(ref('base_population_table'), cast_to='INT64', exclude=['country','country_code']) }}
