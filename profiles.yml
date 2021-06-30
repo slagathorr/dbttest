@@ -1,0 +1,13 @@
+wb_pivot:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: ./dbt-sa.json
+      project: sada-brian-suk-sandbox # -- CHANGE ME TO YOUR PROJECT --
+      dataset: dbttest2
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive

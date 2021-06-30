@@ -1,0 +1,4 @@
+dbt-sa.json
+target/
+dbt_modules/
+logs/
