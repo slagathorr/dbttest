@@ -12,15 +12,9 @@ steps:
           dbt deps --profiles-dir ./
           echo "[TESTING CONNECTION]"
           dbt debug --profiles-dir ./
+          echo "[DBT RUN]"
+          dbt run --profiles-dir ./
     secretEnv: ['sakey']
-  - id: dbt run
-    name: fishtownanalytics/dbt:0.19.1
-    entrypoint: 'bash'
-    args:
-        - '-c'
-        - |
-            echo  "[DBT RUN]"
-            dbt run --profiles-dir ./
 availableSecrets:
   secretManager:
     - versionName: projects/sada-brian-suk-sandbox/secrets/dbt-sa/versions/1
