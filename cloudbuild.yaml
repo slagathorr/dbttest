@@ -1,6 +1,6 @@
 steps:
   - id: setup
-    name: fishtownanalytics/dbt:0.19.1
+    name: fishtownanalytics/dbt:0.19.2
     entrypoint: 'bash'
     args:
       - '-c'
