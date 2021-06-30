@@ -1,0 +1,14 @@
+steps:
+ - name: fishtownanalytics/dbt:0.19.1
+   entrypoint: 'bash'
+   args:
+     - '-c'
+     - |
+         dbt --version
+         echo $$sakey > ./dbt-sa.json 2>/dev/null
+         dbt debug --profiles-dir ./  
+   secretEnv: ['sakey']
+availableSecrets:
+ secretManager:
+   - versionName: projects/sada-brian-suk-sandbox/secrets/dbt-sa/versions/1
+     env: sakey
